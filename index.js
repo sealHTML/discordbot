@@ -1,5 +1,12 @@
 // Discord bot for Roblox key generation and verification
 import { Client, GatewayIntentBits, Partials, REST, Routes, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, ModalBuilder, TextInputBuilder, TextInputStyle, InteractionType, PermissionsBitField } from 'discord.js';
+// Global error handlers to prevent Railway from killing the process
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('Unhandled Rejection:', reason);
+});
+process.on('uncaughtException', (err) => {
+  console.error('Uncaught Exception:', err);
+});
 import dotenv from 'dotenv';
 dotenv.config();
 import express from 'express';
