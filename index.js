@@ -144,6 +144,12 @@ client.on('interactionCreate', async interaction => {
   }
 });
 
+
+// Health check route for Railway
+app.get('/', (req, res) => {
+  res.send('OK');
+});
+
 // Endpoint for Roblox game to verify and consume key
 app.post('/verify-key', (req, res) => {
   const { key, username } = req.body;
